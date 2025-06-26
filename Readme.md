@@ -1,112 +1,105 @@
 # Product Management System
 
-Une application web moderne développée avec React et Spring Boot, offrant une architecture full-stack robuste et performante.
+A modern web application developed with React and Spring Boot, offering a robust and performant full-stack architecture.
 
-l'Application permet de faire la gestion d'inventaire et d'achats: la gestion des produits, fournisseurs, catégories et transactions avec un système de rôles (Admin/Manager).
+The application enables inventory and purchase management: managing products, suppliers, categories, and transactions with a role-based system (Admin/Manager).
 
+## 🎯 Features
 
-## 🎯 Fonctionnalités
+- **Authentication**: Secure login/registration
+- **Product management**: CRUD operations for products and categories (Admin only)
+- **Supplier management**: CRUD operations for suppliers (Admin only)
+- **Purchases and transactions**: Order management and transaction tracking (Admin + Manager)
+- **User profile**: Personal information management
 
-- **Authentification** : Connexion/inscription sécurisée
-- **Gestion produits** : CRUD des produits et catégories (Admin uniquement)
-- **Gestion fournisseurs** : CRUD des fournisseurs (Admin uniquement)
-- **Achats et transactions** : Gestion des commandes et suivi des transactions (Admin + Manager)
-- **Profil utilisateur** : Gestion des informations personnelles
-
-
-## 🚀 Technologies Utilisées
+## 🚀 Technologies Used
 
 ### Frontend
-- **React 19** - Bibliothèque JavaScript pour la création d'interfaces utilisateur
-- **Vite** - Build tool moderne et rapide pour le développement frontend
-- **CSS simple** - Pour le styling
-- **React Router** - Gestion du routage côté client
-- **Axios** - Client HTTP pour les appels API
-- **Contexte API** - Gestion de l'état global
-- **Crypto-js** - Pour sécuriser le token dans localStorage
-
+- **React 19** - JavaScript library for building user interfaces
+- **Vite** - Modern and fast build tool for frontend development
+- **Simple CSS** - For styling
+- **React Router** - Client-side routing management
+- **Axios** - HTTP client for API calls
+- **Context API** - Global state management
+- **Crypto-js** - For securing tokens in localStorage
 
 ### Backend
-- **Spring Boot 3** - Framework Java pour le développement d'applications web
-- **Spring Web** - Module pour la création d'APIs REST
-- **Spring Data JPA** - Abstraction pour l'accès aux données
-- **Spring Security** - Sécurisation de l'application
-- **Spring Boot Starter Validation** - Validation des données
-- **Maven** - Gestionnaire de dépendances et build
+- **Spring Boot 3** - Java framework for web application development
+- **Spring Web** - Module for creating REST APIs
+- **Spring Data JPA** - Data access abstraction
+- **Spring Security** - Application security
+- **Spring Boot Starter Validation** - Data validation
+- **Maven** - Dependency manager and build tool
 
-### Base de Données
-- **MySQL** - Base de données relationnelle
+### Database
+- **MySQL** - Relational database
 - **Hibernate** - ORM (Object-Relational Mapping)
 
-### Sécurité & Authentification
-- **JWT (JSON Web Tokens)** - Authentification stateless
-- **Spring Security** - Configuration de la sécurité
-- **BCrypt** - Hachage des mots de passe
-- **CORS** - Configuration Cross-Origin Resource Sharing
+### Security & Authentication
+- **JWT (JSON Web Tokens)** - Stateless authentication
+- **Spring Security** - Security configuration
+- **BCrypt** - Password hashing
+- **CORS** - Cross-Origin Resource Sharing configuration
 
-### Outils de Développement
-- **Docker** - Conteneurisation de l'application
-- **Docker Compose** - Orchestration multi-conteneurs
-- **Git** - Contrôle de version
-- **ESLint** - Linting JavaScript/TypeScript
-- **Prettier** - Formatage de code
-- **Postman** - Test des APIs
-- **Swagger/OpenAPI** - Documentation API
+### Development Tools
+- **Docker** - Application containerization
+- **Docker Compose** - Multi-container orchestration
+- **Git** - Version control
+- **ESLint** - JavaScript/TypeScript linting
+- **Prettier** - Code formatting
+- **Postman** - API testing
+- **Swagger/OpenAPI** - API documentation
 
+## 📋 Prerequisites
 
-## 📋 Prérequis
-
-- **Node.js** (version 18 ou supérieure)
-- **npm** 
-- **Java 17** ou supérieur
+- **Node.js** (version 18 or higher)
+- **npm**
+- **Java 17** or higher
 - **Maven 3.6+**
-- **Docker** (optionnel)
-
-
+- **Docker** (optional)
 
 ## 🏗️ Architecture
 
 ```
 ├── backend/
 │   ├── src/main/java/
-│   │   ├── security/          # Securité des données
-│   │   ├── controllers/       # Contrôleurs REST
-│   │   ├── services/          # Logique métier
-│   │   ├── repositories/      # Accès aux données
-│   │   ├── entities/          # Entités JPA
+│   │   ├── security/          # Data security
+│   │   ├── controllers/       # REST controllers
+│   │   ├── services/          # Business logic
+│   │   ├── repositories/      # Data access
+│   │   ├── entities/          # JPA entities
 │   │   └── dtos/              # Data Transfer Objects
 │   └── Dockerfile          
 │    
 │       
 └── frontend/
 │   ├── src/
-│   │   ├── components/      # Composants React réutilisables
-│   │   ├── pages/           # Pages de l'application
-│   │   ├── hooks/           # Hooks personnalisés
-│   │   ├── services/        # Services API
-│   │   ├── contexts/        # Gestion d'état global
-│   ├── public/              # Assets statiques
-│   └── index.html           # Point d'entrée HTML car projet "Vite"
+│   │   ├── components/      # Reusable React components
+│   │   ├── pages/           # Application pages
+│   │   ├── hooks/           # Custom hooks
+│   │   ├── services/        # API services
+│   │   ├── contexts/        # Global state management
+│   ├── public/              # Static assets
+│   └── index.html           # HTML entry point for "Vite" project
 │   
-└── sql-scripts/products_db.sql  # Script sql de la base des données
-└── docker-compose.yml /         # Démarrage de conteneurs spring et mysql
+└── sql-scripts/products_db.sql  # Database SQL script
+└── docker-compose.yml /         # Spring and MySQL container startup
 
 ```
 
 ## 🛠️ Installation
 
 ```bash
-# Cloner le repository
-git clone [URL_DU_REPO]
+# Clone the repository
+git clone [REPO_URL]
 cd backend
 ```
 
-
 ## 🔧 Configuration
 
-### Modifier les variables docker-compose.yml
+### Modify docker-compose.yml variables
 
-#### Remplacer chaque "${...}" par les valeurs suivantes:
+#### Replace each "${...}" with the following values:
 ```yaml
 # MySQL Database Config
 DB_HOST=mysql
@@ -126,44 +119,36 @@ SECRETE_JWT_STRING=change_supersecret_keychange_supersecret_keychange_supersecre
 LOG_LEVEL=debug
 ```
 
+## 🚀 Running the Application
 
-
-## 🚀 Lancer l’application
-
-### Backend 
+### Backend
 ```bash
-# Construire l'application
+# Build the application
 mvn clean package -DskipTests
 
-# Construire et lancer avec Docker Compose
+# Build and run with Docker Compose
 docker-compose up --build
 ```
 
 ### Frontend (React + Vite)
 
 ```bash
-# Naviguer vers le dossier frontend
+# Navigate to frontend folder
 cd frontend
 
-# Installer les dépendances
+# Install dependencies
 npm install
 
-# Lancer en mode développement
+# Run in development mode
 npm run dev
 ```
 
+## 📝 License
 
-## 📝 Licence
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
+## 👥 Authors
 
-## 👥 Auteurs
-
-- **Salim SALEY MIDOU** 
+- **Salim SALEY MIDOU**
 
 ---
-
-
-
-
-
